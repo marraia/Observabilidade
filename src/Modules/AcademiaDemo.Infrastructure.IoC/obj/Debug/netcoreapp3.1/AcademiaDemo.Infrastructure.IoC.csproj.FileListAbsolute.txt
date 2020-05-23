@@ -1,0 +1,16 @@
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Infrastructure.IoC\bin\Debug\netcoreapp3.1\AcademiaDemo.Infrastructure.IoC.deps.json
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Infrastructure.IoC\bin\Debug\netcoreapp3.1\AcademiaDemo.Infrastructure.IoC.dll
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Infrastructure.IoC\bin\Debug\netcoreapp3.1\AcademiaDemo.Infrastructure.IoC.pdb
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Infrastructure.IoC\obj\Debug\netcoreapp3.1\AcademiaDemo.Infrastructure.IoC.csprojAssemblyReference.cache
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Infrastructure.IoC\obj\Debug\netcoreapp3.1\AcademiaDemo.Infrastructure.IoC.AssemblyInfoInputs.cache
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Infrastructure.IoC\obj\Debug\netcoreapp3.1\AcademiaDemo.Infrastructure.IoC.AssemblyInfo.cs
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Infrastructure.IoC\obj\Debug\netcoreapp3.1\AcademiaDemo.Infrastructure.IoC.dll
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Infrastructure.IoC\obj\Debug\netcoreapp3.1\AcademiaDemo.Infrastructure.IoC.pdb
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Infrastructure.IoC\bin\Debug\netcoreapp3.1\AcademiaDemo.Application.dll
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Infrastructure.IoC\bin\Debug\netcoreapp3.1\AcademiaDemo.Domain.dll
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Infrastructure.IoC\bin\Debug\netcoreapp3.1\AcademiaDemo.Infrastructure.Repository.dll
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Infrastructure.IoC\bin\Debug\netcoreapp3.1\AcademiaDemo.Application.pdb
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Infrastructure.IoC\bin\Debug\netcoreapp3.1\AcademiaDemo.Infrastructure.Repository.pdb
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Infrastructure.IoC\bin\Debug\netcoreapp3.1\AcademiaDemo.Domain.pdb
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Infrastructure.IoC\obj\Debug\netcoreapp3.1\AcademiaDemo.Infrastructure.IoC.csproj.CoreCompileInputs.cache
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Infrastructure.IoC\obj\Debug\netcoreapp3.1\AcademiaDemo.Infrastructure.IoC.csproj.CopyComplete

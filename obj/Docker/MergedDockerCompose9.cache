@@ -1,0 +1,118 @@
+services:
+  nosql.server:
+    image: mongo
+    ports:
+    - published: 17017
+      target: 27017
+  payment.api:
+    build:
+      context: F:\_medium\AcademiaDemo
+      dockerfile: src/Services/Payment.API/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Payment.API
+      target: base
+    container_name: Payment.API
+    depends_on:
+    - nosql.server
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: paymentapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  "/app/bin/Debug/netcoreapp3.1/Payment.API.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 2222
+      target: 80
+    tty: true
+    volumes:
+    - F:\_medium\AcademiaDemo\src\Services\Payment.API:/app:rw
+    - C:\Users\ferna\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\ferna\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\ferna\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+    - C:\Users\ferna\.nuget\packages:/root/.nuget/packages:ro
+    - F:\_medium\AcademiaDemo:/src:rw
+  sale.api:
+    build:
+      context: F:\_medium\AcademiaDemo
+      dockerfile: src/Services/Sale.API/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Sale.API
+      target: base
+    container_name: Sale.API
+    depends_on:
+    - nosql.server
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: saleapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  "/app/bin/Debug/netcoreapp3.1/Sale.API.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 3333
+      target: 80
+    tty: true
+    volumes:
+    - F:\_medium\AcademiaDemo\src\Services\Sale.API:/app:rw
+    - C:\Users\ferna\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\ferna\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\ferna\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+    - C:\Users\ferna\.nuget\packages:/root/.nuget/packages:ro
+    - F:\_medium\AcademiaDemo:/src:rw
+  stock.api:
+    build:
+      context: F:\_medium\AcademiaDemo
+      dockerfile: src/Services/Stock.API/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Stock.API
+      target: base
+    container_name: Stock.API
+    depends_on:
+    - nosql.server
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: stockapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  "/app/bin/Debug/netcoreapp3.1/Stock.API.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 4444
+      target: 80
+    tty: true
+    volumes:
+    - F:\_medium\AcademiaDemo\src\Services\Stock.API:/app:rw
+    - C:\Users\ferna\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\ferna\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\ferna\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+    - C:\Users\ferna\.nuget\packages:/root/.nuget/packages:ro
+    - F:\_medium\AcademiaDemo:/src:rw
+version: '3.4'

@@ -1,0 +1,14 @@
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Application\bin\Debug\netcoreapp3.1\AcademiaDemo.Application.deps.json
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Application\bin\Debug\netcoreapp3.1\AcademiaDemo.Application.dll
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Application\bin\Debug\netcoreapp3.1\AcademiaDemo.Application.pdb
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Application\obj\Debug\netcoreapp3.1\AcademiaDemo.Application.csprojAssemblyReference.cache
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Application\obj\Debug\netcoreapp3.1\AcademiaDemo.Application.AssemblyInfoInputs.cache
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Application\obj\Debug\netcoreapp3.1\AcademiaDemo.Application.AssemblyInfo.cs
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Application\obj\Debug\netcoreapp3.1\AcademiaDemo.Application.dll
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Application\obj\Debug\netcoreapp3.1\AcademiaDemo.Application.pdb
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Application\bin\Debug\netcoreapp3.1\AcademiaDemo.Domain.dll
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Application\bin\Debug\netcoreapp3.1\AcademiaDemo.Domain.pdb
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Application\obj\Debug\netcoreapp3.1\AcademiaDemo.Application.csproj.CopyComplete
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Application\bin\Debug\netcoreapp3.1\AcademiaDemo.Infrastructure.Repository.dll
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Application\bin\Debug\netcoreapp3.1\AcademiaDemo.Infrastructure.Repository.pdb
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Application\obj\Debug\netcoreapp3.1\AcademiaDemo.Application.csproj.CoreCompileInputs.cache

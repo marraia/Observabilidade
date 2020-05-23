@@ -1,0 +1,69 @@
+version: '3.4'
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.7.0
+    volumes:
+      - ./elastic:/usr/share/elasticsearch/data   
+    container_name: elasticsearch
+    ports:
+      - "9200:9200"
+    environment:
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+     
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.7.0
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+    depends_on:
+      - elasticsearch
+
+  apm-server:
+    image: docker.elastic.co/apm/apm-server:7.7.0
+    container_name: apm-server
+    ports:
+      - "8200:8200"
+      - "8201:8200"
+    environment:
+      - output.elasticsearch.hosts=['http://elasticsearch:9200']
+      - apm-server.host="0.0.0.0:8200"
+      - setup.kibana.host="kibana:5601"
+    depends_on:
+      - elasticsearch
+
+  payment.api:
+    image: paymentapi
+    build:
+      context: .
+      dockerfile: src/Services/Payment.API/Dockerfile
+    depends_on:
+      - nosql.server
+      - elasticsearch
+
+  sale.api:
+    image: saleapi
+    build:
+      context: .
+      dockerfile: src/Services/Sale.API/Dockerfile
+    depends_on:
+      - nosql.server
+      - elasticsearch
+
+  stock.api:
+    image: stockapi
+    build:
+      context: .
+      dockerfile: src/Services/Stock.API/Dockerfile
+    depends_on:
+      - nosql.server
+      - elasticsearch
+
+  nosql.server:
+    image: mongo
+    ports:
+      - "17017:27017"

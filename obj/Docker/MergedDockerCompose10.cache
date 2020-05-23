@@ -1,0 +1,82 @@
+services:
+  apm-server:
+    container_name: apm-server
+    depends_on:
+    - elasticsearch
+    environment:
+      apm-server.host: '"0.0.0.0:8200"'
+      output.elasticsearch.hosts: '[''http://elasticsearch:9200'']'
+      setup.kibana.host: '"kibana:5601"'
+    image: docker.elastic.co/apm/apm-server:7.7.0
+    ports:
+    - published: 8200
+      target: 8200
+    - published: 8201
+      target: 8200
+  elasticsearch:
+    container_name: elasticsearch
+    environment:
+      ES_JAVA_OPTS: -Xms512m -Xmx512m
+      bootstrap.memory_lock: "true"
+      discovery.type: single-node
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.7.0
+    ports:
+    - published: 9200
+      target: 9200
+    volumes:
+    - F:\_medium\AcademiaDemo\elastic:/usr/share/elasticsearch/data:rw
+  kibana:
+    container_name: kibana
+    depends_on:
+    - elasticsearch
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+    image: docker.elastic.co/kibana/kibana:7.7.0
+    ports:
+    - published: 5601
+      target: 5601
+  nosql.server:
+    image: mongo
+    ports:
+    - published: 17017
+      target: 27017
+  payment.api:
+    build:
+      context: F:\_medium\AcademiaDemo
+      dockerfile: src/Services/Payment.API/Dockerfile
+    depends_on:
+    - elasticsearch
+    - nosql.server
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: paymentapi
+    ports:
+    - published: 2222
+      target: 80
+  sale.api:
+    build:
+      context: F:\_medium\AcademiaDemo
+      dockerfile: src/Services/Sale.API/Dockerfile
+    depends_on:
+    - elasticsearch
+    - nosql.server
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: saleapi
+    ports:
+    - published: 3333
+      target: 80
+  stock.api:
+    build:
+      context: F:\_medium\AcademiaDemo
+      dockerfile: src/Services/Stock.API/Dockerfile
+    depends_on:
+    - elasticsearch
+    - nosql.server
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: stockapi
+    ports:
+    - published: 4444
+      target: 80
+version: '3.4'

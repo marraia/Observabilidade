@@ -1,0 +1,9 @@
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Domain\bin\Debug\netcoreapp3.1\AcademiaDemo.Domain.deps.json
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Domain\bin\Debug\netcoreapp3.1\AcademiaDemo.Domain.dll
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Domain\bin\Debug\netcoreapp3.1\AcademiaDemo.Domain.pdb
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Domain\obj\Debug\netcoreapp3.1\AcademiaDemo.Domain.csprojAssemblyReference.cache
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Domain\obj\Debug\netcoreapp3.1\AcademiaDemo.Domain.AssemblyInfoInputs.cache
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Domain\obj\Debug\netcoreapp3.1\AcademiaDemo.Domain.AssemblyInfo.cs
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Domain\obj\Debug\netcoreapp3.1\AcademiaDemo.Domain.csproj.CoreCompileInputs.cache
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Domain\obj\Debug\netcoreapp3.1\AcademiaDemo.Domain.dll
+F:\_medium\AcademiaDemo\src\Modules\AcademiaDemo.Domain\obj\Debug\netcoreapp3.1\AcademiaDemo.Domain.pdb

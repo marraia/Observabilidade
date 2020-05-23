@@ -1,0 +1,43 @@
+services:
+  nosql.server:
+    image: mongo
+    ports:
+    - published: 17017
+      target: 27017
+  payment.api:
+    build:
+      context: F:\_medium\AcademiaDemo
+      dockerfile: src/Services/Payment.API/Dockerfile
+    depends_on:
+    - nosql.server
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: paymentapi
+    ports:
+    - published: 2222
+      target: 80
+  sale.api:
+    build:
+      context: F:\_medium\AcademiaDemo
+      dockerfile: src/Services/Sale.API/Dockerfile
+    depends_on:
+    - nosql.server
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: saleapi
+    ports:
+    - published: 3333
+      target: 80
+  stock.api:
+    build:
+      context: F:\_medium\AcademiaDemo
+      dockerfile: src/Services/Stock.API/Dockerfile
+    depends_on:
+    - nosql.server
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: stockapi
+    ports:
+    - published: 4444
+      target: 80
+version: '3.4'

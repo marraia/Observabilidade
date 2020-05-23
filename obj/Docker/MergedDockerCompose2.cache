@@ -1,0 +1,21 @@
+services:
+  payment.api:
+    build:
+      context: F:\_medium\AcademiaDemo
+      dockerfile: src/Services/Payment.API/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: paymentapi
+    ports:
+    - target: 80
+  sale.api:
+    build:
+      context: F:\_medium\AcademiaDemo
+      dockerfile: src/Services/Sale.API/Dockerfile
+    image: saleapi
+  stock.api:
+    build:
+      context: F:\_medium\AcademiaDemo
+      dockerfile: src/Services/Stock.API/Dockerfile
+    image: stockapi
+version: '3.4'
